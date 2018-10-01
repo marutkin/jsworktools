@@ -8,9 +8,7 @@ Array.prototype.contains = function(searchValue) {
 
 // Get new array filtered by lambda expression
 Array.prototype.where = function(predicatFunction) {
-    return $.grep(this, elem => {
-        return predicatFunction(elem);
-    });
+    return this.filter(predicatFunction);
 }
 
 // Get new array distincted by property name, only for array of objects
