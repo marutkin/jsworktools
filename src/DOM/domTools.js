@@ -15,11 +15,11 @@ const domReady = function (fn) {
 };
 
 const getElement = function (selector, parent) {
-  return (parent ? parent : document).querySelector(selector);
+  return (parent || document).querySelector(selector);
 };
 
 const getElements = function (selector, parent) {
-  return [].slice.call((parent ? parent : document).querySelectorAll(selector));
+  return [].slice.call((parent || document).querySelectorAll(selector));
 };
 
 const getParents = function (elem, selector) {
@@ -136,3 +136,6 @@ const onScrollStop = function (callback) {
   }, false);
 
 };
+
+
+getElements('.epi-form-container__section__row').filter((item) => item.innerText == "Insurance disclaimer text" )
